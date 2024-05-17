@@ -61,7 +61,7 @@ public class ItemsController {
 		try {
 			Object jwtToken = session.getAttribute("adminJwtToken");
 			if (jwtToken != null) {
-
+				
 				if (jwtUtils.validateJwtToken(request.getHeader(Constants.AUTHORIZATION.constant))) {
 					Items item = itemsService.getItemByName(items.getName(),items.getShortDescription());
 					if (item == null) {

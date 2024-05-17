@@ -5,8 +5,6 @@ import java.util.List;
 import com.aspiremanagement.modeladmin.LogsResponse;
 
 
-
-
 public interface LogService {
 	
 	

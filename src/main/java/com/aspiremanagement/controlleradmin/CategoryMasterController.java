@@ -132,6 +132,7 @@ public class CategoryMasterController {
 						categoryMasterService.savecategoryMaster(categoryMaster);
 						logService.logInsert(session.getAttribute("sign-in-user").toString(),
 								" Added Admin Category Master where Id is " + categoryMaster.getId());
+						
 						if (!categoryImage.isEmpty() && categoryImage != null) {
 							String dateName = new SimpleDateFormat("yyyyMMddHHmm").format(new Date());
 							String originalFileName = dateName + "-" + categoryMaster.getId() + "-"

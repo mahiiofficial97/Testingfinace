@@ -399,9 +399,9 @@ public class AdminApplicationController {
 	@ResponseBody
 	public JsonResponse changePassword(Admin setNewPassword, @RequestParam("password") String password,
 			HttpSession session) {
-		Object email = session.getAttribute("email");
-		JsonResponse jsonResponse = new JsonResponse();
-		if (email != null) {
+		    Object email = session.getAttribute("email");
+	     	JsonResponse jsonResponse = new JsonResponse();
+		    if (email != null) {
 
 			BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
@@ -419,7 +419,6 @@ public class AdminApplicationController {
 			adminApplicationService.saveUser(setNewPassword);
 			session.setAttribute("email", null);
 			session.invalidate();
-
 			jsonResponse.setStatusCode(Constants.SUCCESS.constant);
 			jsonResponse.setResult("Change Password");
 			jsonResponse.setMessage("Change Password Successfully !!!");
